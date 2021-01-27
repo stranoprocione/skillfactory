@@ -24,14 +24,16 @@ def game_core(number):
 
 def score_game(core):
     """To know how quickly the program guess answer run the game 1000 times"""
-
     count_ls = []
     np.random.seed(1)  # fix RANDOM SEED for reproducible experiment!
     random_array = np.random.randint(1, 101, size=1000)
+
     for number in random_array:
         count_ls.append(core(number))
+
     score = int(np.mean(count_ls))
     print(f"Ваш алгоритм угадывает число в среднем за {score} попыток")
+
     return score
 
 
